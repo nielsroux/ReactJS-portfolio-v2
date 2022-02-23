@@ -3,9 +3,9 @@ import './services.scss';
 
 const Services = () => {
     return (
-        <div>
-            
-        </div>
+        <section id="services">
+            Services
+        </section>
     );
 };
 

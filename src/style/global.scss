@@ -7,3 +7,118 @@
     list-style: none;
     text-decoration: none;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: $bg-color;
+    background-image: url(../assets/img/bg-pattern-02.png);
+    font-family: 'Poppins', sans-serif;
+    color: $primary-color;
+}
+
+/* ================ GENERAL STYLES ================ */
+.container {
+    width: $container-width-lg;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+section {
+    margin-top: 8rem;
+    height: 100vh;
+    >h2,
+    >h5 {
+        text-align: center;
+        color: $primary-color-light;
+    }
+
+    >h2 {
+        color: $primary-color;
+        margin-bottom: 3rem;
+    }
+}
+
+.text-light {
+    color: $primary-color-light;
+}
+
+a {
+    color: $primary-color;
+    transition: $transition;
+
+    &:hover {
+        color: rgba(55, 114, 255, 1);
+    }
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    color: $primary-color;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid $primary-color;
+    transition: $transition;
+
+    &:hover {
+        background-color: $primary-color;
+        color: $bg-color;
+        border-color: transparent;
+    }
+}
+
+.btn-primary {
+    background: $primary-color;
+    color: $bg-color;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ================ MEDIA QUERIES (MEDIUM DEVICES) ================ */
+@include media-max("desktop-up") { 
+    .container {
+        width: $container-width-md;
+    }
+
+    section {
+        margin-top: 6rem;
+    }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ================ */
+@include media-max("phone-down") { 
+    .container {
+        width: $container-width-sm;
+    }
+
+    section > h2{
+        margin-top: 2rem;
+    }
+}
