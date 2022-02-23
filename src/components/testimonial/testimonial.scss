@@ -1,0 +1,53 @@
+@import "../../style/settings";
+
+.container.testimonials__container {
+    width: 40%;
+    padding-bottom: 3rem;
+
+    .client__avatar {
+        width: 4rem;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        border: 0.2rem solid $primary-color-blue;
+    }
+
+    .testimonial {
+        background-color: $bg-color-variant;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 2rem;
+        user-select: none;
+
+        .client__review {
+            color: $primary-color-light;
+            font-weight: 400;
+            display: block;
+            width: 80%;
+            margin: 0.8rem auto 0;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        background-color: white;
+    }
+}
+
+/* ================ MEDIA QUERIES (MEDIUM DEVICES) ================ */
+@include media-max("desktop-up") {
+    .container.testimonials__container {
+        width: 60%;
+    }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ================ */
+@include media-max("phone-down") {
+    .container.testimonials__container {
+        width: $container-width-sm;
+
+        .client__review {
+            width: $container-width-sm;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@import "../../style/settings";
+
+.services__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    .service {
+        background-color: $bg-color-variant;
+        border-radius: 0 0 2rem 2rem;
+        border: 1px solid $primary-color;
+        height: fit-content;
+        transition: $transition;
+
+        &:hover {
+            background: transparent;
+            border-color: $primary-color-variant;
+            cursor: default;
+        }
+
+        .service__head {
+            background: $primary-color-blue;
+            padding: 2rem;
+            border-radius: 0 0 2rem 2rem;
+            box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+
+            h3 {
+                color: $bg-color-variant;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+
+        .service__list {
+            padding: 2rem;
+
+            li {
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            svg {
+                color: $primary-color-blue;
+                margin-top: 2px;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+/* ================ MEDIA QUERIES (MEDIUM DEVICES) ================ */
+@include media-max("desktop-up") {
+    .services__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        .service {
+            height: auto;
+        }
+    }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ================ */
+@include media-max("phone-down") {
+    .services__container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

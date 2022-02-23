@@ -1,8 +1,9 @@
 $bg-color: #1f1f1f;
-$bg-color-variant: white;
+$bg-color-variant: rgba(0, 0, 0, 0.6);
 
 $primary-color: white;
-$primary-color-light: rgba(255,255,255,0.6);
+$primary-color-light: rgba(255, 255, 255, 0.6);
+$primary-color-blue: rgb(91, 203, 255);
 $primary-color-variant: #1f1f1f;
 
 $container-width-lg: 75%;
@@ -18,7 +19,7 @@ $breakpoints: (
     "tablet-down": 900px,
     "desktop-up": 1024px,
     "desktop-down": 1280px,
-    "widescreen-up": 1440px
+    "widescreen-up": 1440px,
 );
 /* from... */
 @mixin media-min($_key) {

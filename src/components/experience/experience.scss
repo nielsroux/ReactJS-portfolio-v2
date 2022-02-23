@@ -1,0 +1,108 @@
+@import "../../style/settings";
+
+/* ================ BUILD WITH FLEX ================ */
+/*.experience__container {
+    display: flex;
+    gap: 4rem;
+
+    > div {
+        background: $bg-color-variant;
+        flex: 1;
+        padding: 1rem 2rem;
+        text-align: center;
+        border: 1px solid transparent;
+        transition: $transition;
+
+        &:hover {
+            background: transparent;
+            border-color: $primary-color;
+        }
+
+        .experience__content {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 2rem;
+
+            article {
+                flex: 1 0 30%;
+            }
+        }
+    }
+}*/
+
+/* ================ BUILD WITH GRID ================ */
+.experience__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    > div {
+        background: $bg-color-variant;
+        padding: 2.4rem 5rem;
+        border-radius: 2rem;
+        border: 1px solid transparent;
+        transition: $transition;
+
+        &:hover {
+            background: transparent;
+            border-color: $primary-color;
+            cursor: default;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: $primary-color-blue;
+        }
+
+        .experience__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 2rem;
+
+            article {
+                display: flex;
+                gap: 1rem;
+
+                svg {
+                    margin-top: 6px;
+                    color: $primary-color-blue;
+                }
+            }
+        }
+    }
+}
+
+/* ================ MEDIA QUERIES (MEDIUM DEVICES) ================ */
+@include media-max("desktop-up") {
+    .experience__container {
+        grid-template-columns: 1fr;
+        > div {
+            width: 80%;
+            padding: 2rem;
+            margin: 0 auto;
+
+            .experience__content {
+                grid-template-columns: 1fr 1fr;
+                padding: 1rem;
+            }
+        }
+    }
+}
+
+/* ================ MEDIA QUERIES (SMALL DEVICES) ================ */
+@include media-max("phone-down") {
+    .experience__container {
+        gap: 1rem;
+        > div {
+            width: 100%;
+            padding: 2rem 1rem;
+
+            .experience__content {
+                grid-template-columns: 1fr 1fr;
+                padding: 1rem;
+            }
+        }
+    }
+}
